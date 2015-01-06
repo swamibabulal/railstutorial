@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Railstutorial</title>
+  <title>Rails Tutorial :: <%= yield(:title) %> :: Babu Lal Swami</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	
+	<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Rails Tutorials", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",   root_path %></li>
+            <li><%= link_to "Help",   help_path %></li>
+            <li><%= link_to "Log in", login_path %></li>
+            <li><%= link_to "Sign Up", signup_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+	
+	<div class="container">
+		<%= yield %>
+		<footer class="footer">
+			<small>
+				<a href="https://www.facebook.com/swamibabulal">Rails Tutorial</a>by Babu Lal Swami
+			</small>
+			<nav>
+				<ul>
+					<li><%= link_to "About", about_path %></li>
+					<li><%= link_to "Contact", contact_path %></li>
+					<li><a href="https://www.facebook.com/swamibabulal">FacebookPage</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</div>
 
 </body>
 </html>
+
+
