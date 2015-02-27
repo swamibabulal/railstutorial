@@ -7,9 +7,12 @@ gem 'bootstrap-sass', '3.2.0.0'
 gem 'bcrypt','3.1.7'
 # Use sqlite3 as the database for Active Record
 
+group :production, :staging do
+  gem "pg"
+end
 
 group :development, :test do
-  gem 'sqlite3',     '1.3.9'
+  gem "sqlite3"
 end
 
 
